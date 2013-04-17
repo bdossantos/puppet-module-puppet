@@ -1,0 +1,9 @@
+# File is managed by puppet
+
+# Defaults for puppet - sourced by /etc/init.d/puppet
+
+# Start puppet on boot?
+START=<%= scope.lookupvar('puppet::ensure_puppet_service') == true ? "yes" : "no" %>
+
+# Startup options
+DAEMON_OPTS=""

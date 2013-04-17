@@ -1,0 +1,27 @@
+# This file is managed by Puppet
+
+[main]
+user = puppet
+group = puppet
+report = true
+reports = log,store
+confdir = /etc/puppet
+moduledir = /etc/puppet/modules:/var/lib/puppet/modules
+manifestdir = $confdir/manifests
+logdir = /var/log/puppet
+masterhttplog = $logdir/masterhttp.log
+masterlog = $logdir/puppetmaster.log
+masterport = 8140
+vardir = /var/lib/puppet
+ssldir = $vardir/ssl
+rundir = /var/run/puppet
+factpath = $vardir/facts
+templatedir = $confdir/templates
+
+[master]
+certname = <%= @puppetmaster %>
+
+[agent]
+pluginsync = false
+report = true
+server = <%= @puppetmaster %>
