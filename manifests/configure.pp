@@ -2,7 +2,7 @@ class puppet::configure {
   File {
     owner   => 'root',
     group   => 'root',
-    mode    => 640,
+    mode    => '0640',
     require => Class['puppet::install'],
   }
 
