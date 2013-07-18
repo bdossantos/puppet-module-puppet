@@ -1,5 +1,7 @@
 # Puppet-Puppet module
 
+[![Build Status](https://secure.travis-ci.org/bdossantos/puppet-module-puppet.png)](http://travis-ci.org/bdossantos/puppet-module-puppet)
+
 Manage Puppet w/ Puppet, whosmad ?
 
 ## Running the tests
