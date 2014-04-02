@@ -17,7 +17,7 @@ describe 'puppet', :type => :class do
 
   it do
     should contain_package('facter').with({
-      'ensure'  => 'latest',
+      'ensure'  => '1.7.5-1puppetlabs1',
     })
   end
 

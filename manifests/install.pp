@@ -5,7 +5,7 @@ class puppet::install {
   }
 
   package { 'facter':
-    ensure => latest,
+    ensure => $puppet::facter_version,
   }
 
   file { ['/etc/facter', '/etc/facter/facts.d']:
