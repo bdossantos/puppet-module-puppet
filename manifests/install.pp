@@ -1,7 +1,11 @@
 class puppet::install {
-  package { ['puppet', 'puppet-common']:
+  package { ['puppet', 'puppet-common', ]:
     ensure  => $puppet::version,
     require => Package['facter'],
+  } ->
+
+  package { ['hiera', 'hiera-puppet', ]:
+    ensure => present,
   }
 
   package { 'facter':
