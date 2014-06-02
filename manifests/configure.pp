@@ -12,6 +12,17 @@ class puppet::configure {
     notify  => Class['puppet::service'],
   }
 
+  file { '/etc/puppet/hiera.yaml':
+    ensure  => present,
+    content => template('puppet/hiera.yaml.erb'),
+    notify  => Class['puppet::service'],
+  }
+
+  file { '/etc/hiera.yaml':
+    ensure => link,
+    target => '/etc/puppet/hiera.yaml',
+  }
+
   file { '/var/lib/puppet/reports':
     ensure  => directory,
     owner   => 'puppet',

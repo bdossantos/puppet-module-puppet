@@ -12,7 +12,7 @@ class puppet::install {
     ensure => $puppet::facter_version,
   }
 
-  file { ['/etc/facter', '/etc/facter/facts.d']:
+  file { ['/etc/facter', '/etc/facter/facts.d', '/etc/puppet/hieradata',]:
     ensure => directory,
     owner  => 'root',
     group  => 'root',
