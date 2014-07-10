@@ -4,7 +4,7 @@ class puppet::install {
     require => Package['facter'],
   } ->
 
-  package { ['hiera', 'hiera-puppet', ]:
+  package { 'hiera':
     ensure => present,
   }
 

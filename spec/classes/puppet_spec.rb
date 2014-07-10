@@ -3,7 +3,8 @@ require 'spec_helper'
 describe 'puppet', :type => :class do
   let(:title) { 'puppet' }
   let(:params) do {
-      :version                => '2.7.22-1puppetlabs1',
+      :version                => '3.6.2-1puppetlabs1',
+      :facter_version         => '2.1.0-1puppetlabs1',
       :ensure_puppet_service  => 'running',
       :puppetmaster           => 'puppet.exemple.com'
     }
@@ -11,13 +12,13 @@ describe 'puppet', :type => :class do
 
   it do
     should contain_package('puppet', 'puppet-common').with({
-      'ensure' => '2.7.22-1puppetlabs1',
+      'ensure' => '3.6.2-1puppetlabs1',
     })
   end
 
   it do
     should contain_package('facter').with({
-      'ensure'  => '1.7.5-1puppetlabs1',
+      'ensure'  => '2.1.0-1puppetlabs1',
     })
   end
 
